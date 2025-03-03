@@ -4,6 +4,16 @@
 - Note：笔记文件夹
 - Code: 程序代码文件夹
 
+# Resource
+这里存放一些资源（一般为大文件）
+<a href="https://g-peqn3431.coding.net/p/studyproject/d/Resource/git" target="_blank">ecoding仓库</a> 
+1. git安装包
+2. mingw安装包
+3. rojo
+4. 梯子
+5. aftman
+6. mingw在线安装器
+
 # Tools
 这里存放许多工具（链接、软件下载地址、图片素材）
 <p>
@@ -22,9 +32,6 @@
     2. KaTeX 拥有比 MathJax 更快的性能，但是它却少了很多 MathJax 拥有的特性。你可以查看 KaTeX supported functions/symbols 来了解 KaTeX 支持那些符号和函数。
     - [KaTeX](https://github.com/Khan/KaTeX)
     - [MathJax](https://github.com/mathjax/MathJax)
-
-## C++
-- [MinGW64 在线安装包（官方）](https://github.com/2366983948/PrivateCode/blob/main/ConfigFile/mingwInstaller.exe)
 
 ## 在线工具网站
 - [菜鸟工具](https://www.jyshare.com/)：

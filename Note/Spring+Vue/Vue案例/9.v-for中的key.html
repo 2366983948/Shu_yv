@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>提示 ：{{username}}</p>
+        
+        <!-- 添加用户   -->
+        <div>
+            <input type="text" v-model="name" placeholder="请输入用户名" />
+            <button @click="addUser">添加用户
+        </div>
+        <!--用户列表   -->
+        <ul>
+            <li v-for="(user, i) in userList">
+                <input type="checkbox"/>姓名: {{user.name}}
+            </li>
+        </ul> 
+        <p>目前该程序的index会变化，导致在添加用户后数据就会乱，实际开发过程中会采用数据库中的user.id</p>
+    </div>
+
+    <script>
+        const vm = {
+            data:function(){
+                return {
+                    username:'key可以标记每一个 li 标签。v-model是一个双向绑定的属性，当用户输入时，v-model会自动更新数据。',
+                    //用户列表
+                    userList: [
+                        { id: 1,name:'zhangsan' },
+                        { id: 2, name : 'lisi' },
+                        { id: 3, name : 'wangwu' },
+                    ],
+                    nextId:3
+                }
+            },
+            methods:{
+                /**
+                 * 添加用户
+                 */
+                addUser() {
+                    this.userList.unshift({
+                        id: this.nextId++,
+                        name: this.name
+                    })
+                    this.name = ''
+                }
+            },
+            
+        }
+        const app = Vue.createApp(vm)
+        app.mount('#app')
+    </script>
+</body>
+</html>

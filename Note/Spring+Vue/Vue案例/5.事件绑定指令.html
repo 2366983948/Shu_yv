@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>提示 ：{{username}}</p>
+        <p>提示 ：v-on 和 @ 等价</p>
+        <p>提示 ：vue的强大功能在于数据变了，页面自动变化，页面变了，数据自动变化</p>
+        <h3>count的值为: {{count}}</h3>
+        <button v-on:click="addCount">+1</button>
+        <button @click="count+=1">+1</button>
+    </div>
+
+    <script>
+        const vm = {
+            data:function(){
+                return {
+                    username:'实现点击按钮数字+1',
+                    count:0
+                }
+            },
+            methods:{
+                addCount(event){
+                    this.count+=1
+                },
+            },
+        }
+        const app = Vue.createApp(vm)
+        app.mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>提示 ：{{username}}</p>
+        <p v-if="num > 0.5">随机数> 0.5</p>
+        <p v-else>随机数≤0.5</p>
+        <hr />
+        <p v-if="type === 'A'">优秀</p>
+        <p v-else-if="type === 'B'">良好</p>
+        <p v-else-if="type === 'C'">-般</p>
+        <p v-else>差</p>
+    </div>
+
+    <script>
+        const vm = {
+            data:function(){
+                return {
+                    username:'配合if使用',
+                    //生成1以内的随机数
+                    num:Math.random(),
+                    // 随机选择 'A', 'B', 'C'
+                    type: ['A', 'B', 'C'][Math.floor(Math.random() * 3)]
+                }
+            }
+        }
+        const app = Vue.createApp(vm)
+        app.mount('#app')
+    </script>
+</body>
+</html>
